@@ -14,7 +14,6 @@ PROJECT_PATH = os.path.dirname(__file__)
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -28,8 +27,9 @@ TEMPLATE_DEBUG = True
 
 MEDIA_ROOT = PROJECT_PATH + '/media/'
 
+# TEMPLATE_DIRS must be a tuple (i.e. need the trailing comma)
 TEMPLATE_DIRS = (
-    PROJECT_PATH + '/templates/'
+    PROJECT_PATH + '/templates/',
 )
 
 ALLOWED_HOSTS = []
@@ -44,25 +44,22 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
-    # 'request'
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware', # TODO Add later on?
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django_test.test_middleware.StatsMiddleware',
-    # 'django_test.request_logger.RequestLogger',
+    'django_test.request_logger_middleware.RequestLoggerMiddleware',
 )
 
 ROOT_URLCONF = 'django_test.urls'
 
 WSGI_APPLICATION = 'django_test.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -79,14 +76,13 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EST'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
