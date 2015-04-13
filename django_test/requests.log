@@ -1,0 +1,8 @@
+{u'lastname': u'ortega', u'firstname': u'denise'}
+{u'lastname': u'kim', u'firstname': u'minnie'}
+{u'lastname': u'bose', u'firstname': u'neladri'}
+localhost:8000/polls/{u'lastname': u'ortega', u'firstname': u'denise'}
+<QueryDict: {u'lastname': [u'ortega'], u'firstname': [u'denise']}>
+<QueryDict: {u'lastname': [u'ortega'], u'firstname': [u'denise']}>
+localhost:8000/polls/{}
+localhost:8000/polls/{u'lastname': u'mouse', u'firstname': u'mickey'}
