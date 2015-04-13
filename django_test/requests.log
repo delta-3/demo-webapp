@@ -1,98 +1,21 @@
-{u'lastname': u'ortega', u'firstname': u'denise'}
-{u'lastname': u'kim', u'firstname': u'minnie'}
-{u'lastname': u'bose', u'firstname': u'neladri'}
-localhost:8000/polls/{u'lastname': u'ortega', u'firstname': u'denise'}
-<QueryDict: {u'lastname': [u'ortega'], u'firstname': [u'denise']}>
-<QueryDict: {u'lastname': [u'ortega'], u'firstname': [u'denise']}>
-localhost:8000/polls/{}
-localhost:8000/polls/{u'lastname': u'mouse', u'firstname': u'mickey'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'Kim', u'firstname': u'Minnie'}
-127.0.0.1:8000/polls/{u'lastname': u'Kim', u'firstname': u'Minnie'}
-127.0.0.1:8000/polls/{u'lastname': u'Kim', u'firstname': u'Minnie'}
-127.0.0.1:8000/polls/{u'lastname': u'Kim', u'firstname': u'Minnie'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'kim', u'firstname': u'minnie'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'test', u'firstname': u'test'}
-127.0.0.1:8000/polls/{u'lastname': u'KIM', u'firstname': u'MINNIE'}
-127.0.0.1:8000/polls/{u'lastname': u'KIM', u'firstname': u'MINNIE'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'HELLO', u'firstname': u'HI'}
-127.0.0.1:8000/polls/{u'lastname': u'HELLO', u'firstname': u'HI'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/?name=hi{u'name': u'hi'}
-127.0.0.1:8000/polls/?name=hi{u'name': u'hi'}
-127.0.0.1:8000/polls/?name=hello{u'name': u'hello'}
-127.0.0.1:8000/polls/?name=hello{u'name': u'hello'}
-127.0.0.1:8000/polls/?name=hello{u'name': u'hello'}
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'123', u'firstname': u'testing'}
-127.0.0.1:8000/polls/{u'lastname': u'123', u'firstname': u'testing'}
-127.0.0.1:8000/polls/{u'lastname': u'Kim', u'firstname': u'Minnie'}
-127.0.0.1:8000/polls/<QueryDict: {u'lastname': [u'Kim'], u'firstname': [u'Minnie']}>
-127.0.0.1:8000/polls/<QueryDict: {u'lastname': [u'Kim'], u'firstname': [u'Minnie']}>
-127.0.0.1:8000/polls/<QueryDict: {}>
-127.0.0.1:8000/polls/<QueryDict: {}>
-127.0.0.1:8000/polls/{}
-127.0.0.1:8000/polls/{u'lastname': u'again', u'firstname': u'Testing'}
-127.0.0.1:8000/polls/{u'lastname': u'again', u'firstname': u'Testing'}127.0.0.1
-127.0.0.1:8000/polls/{u'lastname': u'addr', u'firstname': u'added remote '}127.0.0.1
-Remote address (i.e. client IP): 127.0.0.1Host: 127.0.0.1:8000Full path: /polls/Post data: <QueryDict: {u'lastname': [u'addr'], u'firstname': [u'added remote ']}>Remote address (i.e. client IP): 127.0.0.1Host: 127.0.0.1:8000Full path: /polls/Post data: <QueryDict: {u'lastname': [u'addr'], u'firstname': [u'added remote ']}>
-Remote address (i.e. client IP): 127.0.0.1Host: 127.0.0.1:8000Full path: /polls/Post data: <QueryDict: {u'lastname': [u'logic'], u'firstname': [u'testing post']}>
-127.0.0.1,127.0.0.1:8000,/polls/,<QueryDict: {u'lastname': [u'logic'], u'firstname': [u'testing post']}>
-127.0.0.1,127.0.0.1:8000,/polls/,<QueryDict: {u'lastname': [u'and again'], u'firstname': [u'testing again']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'and again'], u'firstname': [u'testing again']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'and again again again'], u'firstname': [u'testing again again again']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'and again again again'], u'firstname': [u'testing again again again']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'test'], u'firstname': [u'post ']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'test'], u'firstname': [u'post ']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'test'], u'firstname': [u'post ']}>
-127.0.0.1;127.0.0.1:8000;/polls/?data1=hello&data2=hi;<QueryDict: {u'data1': [u'hello'], u'data2': [u'hi']}>
-127.0.0.1;127.0.0.1:8000;/polls/?data1=hello&data2=hi;<QueryDict: {u'data1': [u'hello'], u'data2': [u'hi']}>
-2015-04-13 05:11:38.725636127.0.0.1;127.0.0.1:8000;/polls/?data1=hello&data2=hi;<QueryDict: {u'data1': [u'hello'], u'data2': [u'hi']}>
-2015-04-13 05:11:40.856153127.0.0.1;127.0.0.1:8000;/polls/?data1=hello&data2=hi;<QueryDict: {u'data1': [u'hello'], u'data2': [u'hi']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'time'], u'firstname': [u'testing']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'time'], u'firstname': [u'testing']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'time'], u'firstname': [u'testing']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'again'], u'firstname': [u'testing time']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'again'], u'firstname': [u'testing time']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'test'], u'firstname': [u'time']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'test'], u'firstname': [u'time']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'1'], u'firstname': [u'testing middleware']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'1'], u'firstname': [u'testing middleware']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'1'], u'firstname': [u'testing middleware']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'2'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'2'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'3'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'3'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'4'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'4'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'5'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'5'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'6'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'6'], u'firstname': [u'middleware test']}>
-127.0.0.1;127.0.0.1:8000;/polls/;<QueryDict: {u'lastname': [u'7'], u'firstname': [u'middleware test']}>
+
+127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/polls/strings.html;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/polls/strings;POST;<QueryDict: {u'lastname': [u'Kim'], u'firstname': [u'Minnie']}>
+127.0.0.1;127.0.0.1:8000;/polls/numbers.html;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/polls/numbers;POST;<QueryDict: {u'num1': [u'1'], u'num2': [u'2']}>
+127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/polls/about.html;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
+127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
+127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
+127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
+2015-04-13 11:17:11.078189;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+2015-04-13 11:21:02;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+2015-04-13 11:21:04;127.0.0.1;127.0.0.1:8000;/polls/about.html;GET;<QueryDict: {}>
+2015-04-13 11:23:40;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+2015-04-13 11:23:43;127.0.0.1;127.0.0.1:8000;/polls/strings.html;GET;<QueryDict: {}>
+2015-04-13 11:23:44;127.0.0.1;127.0.0.1:8000;/polls/strings;POST;<QueryDict: {u'lastname': [u''], u'firstname': [u'']}>
