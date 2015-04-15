@@ -6,11 +6,11 @@
 	<div class="container" style="text-align: center">
 		<form action="/polls/strings" method="post"> <!--{% csrf_token %}-->
 		First name:<br>
-		<input id="firstname" type="text" name="firstname" value="{{ first_name }}">
+		{{ form.firstname }}
 		<br>
 		<br>
 		Last name:<br>
-		<input id="lastname" type="text" name="lastname" value="{{ last_name }}">
+		{{ form.lastname }}
 		<br>
 		<br>
 		<br>

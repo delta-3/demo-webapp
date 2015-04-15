@@ -1,21 +1,13 @@
-
-127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/polls/strings.html;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/polls/strings;POST;<QueryDict: {u'lastname': [u'Kim'], u'firstname': [u'Minnie']}>
-127.0.0.1;127.0.0.1:8000;/polls/numbers.html;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/polls/numbers;POST;<QueryDict: {u'num1': [u'1'], u'num2': [u'2']}>
-127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/polls/about.html;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
-127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
-127.0.0.1;127.0.0.1:8000;/admin/;GET;<QueryDict: {}>
-127.0.0.1;127.0.0.1:8000;/admin/login/?next=/admin/;GET;<QueryDict: {u'next': [u'/admin/']}>
-2015-04-13 11:17:11.078189;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-2015-04-13 11:21:02;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-2015-04-13 11:21:04;127.0.0.1;127.0.0.1:8000;/polls/about.html;GET;<QueryDict: {}>
-2015-04-13 11:23:40;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
-2015-04-13 11:23:43;127.0.0.1;127.0.0.1:8000;/polls/strings.html;GET;<QueryDict: {}>
-2015-04-13 11:23:44;127.0.0.1;127.0.0.1:8000;/polls/strings;POST;<QueryDict: {u'lastname': [u''], u'firstname': [u'']}>
+2015-04-15 13:09:53;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>
+2015-04-15 13:09:54;127.0.0.1;127.0.0.1:8000;/polls/strings.html;GET;<QueryDict: {}>
+2015-04-15 13:10:00;127.0.0.1;127.0.0.1:8000;/polls/strings;POST;<QueryDict: {u'lastname': [u'700'], u'firstname': [u'ec']}>
+2015-04-15 13:10:06;127.0.0.1;127.0.0.1:8000;/polls/numbers.html;GET;<QueryDict: {}>
+2015-04-15 13:10:10;127.0.0.1;127.0.0.1:8000;/polls/numbers;POST;<QueryDict: {u'num1': [u'700'], u'num2': [u'2015']}>
+2015-04-15 13:10:14;127.0.0.1;127.0.0.1:8000;/polls/login.html;GET;<QueryDict: {}>
+2015-04-15 13:10:19;127.0.0.1;127.0.0.1:8000;/polls/login;POST;<QueryDict: {u'username': [u'user'], u'password': [u'blah']}>
+2015-04-15 13:10:23;127.0.0.1;127.0.0.1:8000;/polls/comments.html;GET;<QueryDict: {}>
+2015-04-15 13:10:29;127.0.0.1;127.0.0.1:8000;/polls/comments;POST;<QueryDict: {u'comments': [u':)']}>
+2015-04-15 13:10:37;127.0.0.1;127.0.0.1:8000;/polls/comments.html;GET;<QueryDict: {}>
+2015-04-15 13:10:53;127.0.0.1;127.0.0.1:8000;/polls/comments;POST;<QueryDict: {u'comments': [u'<script>alert(document.cookie)</script>']}>
+2015-04-15 13:10:58;127.0.0.1;127.0.0.1:8000;/polls/about.html;GET;<QueryDict: {}>
+2015-04-15 13:11:02;127.0.0.1;127.0.0.1:8000;/polls/;GET;<QueryDict: {}>

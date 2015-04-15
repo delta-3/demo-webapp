@@ -1,19 +1,21 @@
 from django.shortcuts import render
-from django.template import Context, loader
-from django.http import HttpResponse
+from forms import *
 
+# TODO Add code to handle GET and POST requests
 def home(request):
-	t = loader.get_template('polls/home.html')
-	return HttpResponse(t.render())
+	return render(request, 'polls/home.html')
 
 def strings(request):
-	t = loader.get_template('polls/strings.html')
-	return HttpResponse(t.render())
+	return render(request, 'polls/strings.html', {'form': StringsForm})
 
 def numbers(request):
-	t = loader.get_template('polls/numbers.html')
-	return HttpResponse(t.render())
+	return render(request, 'polls/numbers.html', {'form': NumbersForm})
+	
+def login(request):
+	return render(request, 'polls/login.html', {'form': LoginForm})
+
+def comments(request):
+	return render(request, 'polls/comments.html', {'form': CommentsForm})
 
 def about(request):
-	t = loader.get_template('polls/about.html')
-	return HttpResponse(t.render())
+	return render(request, 'polls/about.html')
