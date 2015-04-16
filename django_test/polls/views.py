@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from forms import *
+from django.forms.formsets import formset_factory
 
 # TODO Add code to handle GET and POST requests
 def home(request):
@@ -19,3 +20,6 @@ def comments(request):
 
 def about(request):
 	return render(request, 'polls/about.html')
+
+def search(request):
+	return render(request, 'polls/search.html', {'form': SearchForm})

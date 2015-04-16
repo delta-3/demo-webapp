@@ -16,4 +16,6 @@ urlpatterns = [
 	url(r'^login', views.login, name='login'),
 	# /polls/comments
 	url(r'^comments', views.comments, name='comments'),
+	# /polls/search
+	url(r'^search', views.search, name='search'),
 ]

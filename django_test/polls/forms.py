@@ -14,3 +14,7 @@ class LoginForm(forms.Form):
 
 class CommentsForm(forms.Form):
 	comments = forms.CharField(widget=forms.Textarea)
+
+class SearchForm(forms.Form):
+	searchterm = forms.CharField(max_length=35)
+	results = forms.CharField(max_length=35)
