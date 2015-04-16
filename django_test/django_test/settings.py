@@ -89,6 +89,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Bootstrap files are saved here
 STATICFILES_DIRS = (
     PROJECT_PATH + '/static/',
 )
