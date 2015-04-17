@@ -1,10 +1,11 @@
 # request_logger
 Python 2.7.6  
 
-## mysite
-Created with **Django version 1.8**
-
-Includes Request model and modified middleware for saving incoming requests to the database as Request objects
-
 ## django_test
 Created with **Django version 1.6.1**
+
+To run the django_test demo app locally `cd` into the `django_test` folder and run 
+```
+python manage.py runserver
+```
+Then open your browser and visit `http://localhost:8000/polls/` to view the app. 
