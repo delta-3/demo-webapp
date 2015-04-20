@@ -30,7 +30,7 @@ TEMPLATE_DIRS = (
 SECRET_KEY = '+2_97wfay^rdst-=5=0pz+r%5$)usmp7g3$$)0!vkl(d-2=m&y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = []
 
@@ -91,3 +91,37 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_PATH, 'static/'),
 )
+LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': True,
+        'formatters': {
+                    'verbose': {
+                                    'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+                                },
+                    'simple': {
+                                    'format': '%(levelname)s %(message)s'
+                                },
+                },
+        'handlers': {
+                    'null': {
+                                    'level': 'DEBUG',
+                                    'class': 'django.utils.log.NullHandler',
+                                },
+                    'console':{
+                                    'level': 'DEBUG',
+                                    'class': 'logging.StreamHandler',
+                                    'formatter': 'simple'
+                                },
+                },
+        'loggers': {
+                    'django': {
+                                    'handlers': ['null'],
+                                    'propagate': True,
+                                    'level': 'INFO',
+                                },
+                    '': {
+                                    'handlers': ['console'],
+                                    'level': 'DEBUG',
+                                }
+                }
+}
