@@ -2,3 +2,4 @@
 /django_test/django_test/request_logger_middleware.pyc
 *.pyc
 *~
+*.log
