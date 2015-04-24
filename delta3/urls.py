@@ -5,10 +5,6 @@ from . import views
 urlpatterns = [
 	# /delta3
     url(r'^$', views.home, name='home'),
-    # /delta3/strings
-	url(r'^strings', views.strings, name='strings'),
-	# /delta3/numbers
-	url(r'^numbers', views.numbers, name='numbers'),
 	# /delta3/login
 	url(r'^login', views.login, name='login'),
 	# /delta3/register
@@ -19,8 +15,4 @@ urlpatterns = [
 	url(r'^search', views.search, name='search'),
 	# /delta3/about
 	url(r'^about', views.about, name='about'),
-	# /delta3/thanks
-	url(r'^thanks', views.thanks, name='thanks'),
-	# /delta3/secure_app
-	#url(r'^secure_app', views.secure_app, name='secure_app'),
 ]

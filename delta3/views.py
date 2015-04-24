@@ -7,12 +7,6 @@ from django.db import connection
 
 def home(request):
 	return render(request, 'delta3/home.html')
-
-def strings(request):
-	return render(request, 'delta3/strings.html', {'form': StringsForm})
-
-def numbers(request):
-	return render(request, 'delta3/numbers.html', {'form': NumbersForm})
 	
 def login(request):
 	return render(request, 'delta3/login.html', {'form': LoginForm})
@@ -29,10 +23,11 @@ def search(request):
 			# g = Gif.objects.raw('SELECT * from delta3_gif where gif_name=""; SELECT * from delta3_user')
 			if (g):
 				response = ""
+				html = ""
 				for x in g:	
 					response = response + str(x) + "<br>"
 					url = str(x.gif_url)
-				html = "<img src=" + url + "\>"
+					html = html + "<img src=" + url + "\><br>"
 				return HttpResponse(html)
 	return render(request, 'delta3/search.html', {'form': SearchForm})
 
@@ -61,9 +56,3 @@ def register(request):
 		# except ValueError:
 		# 	return HttpResponse("ValueError exception thrown")
 	return render(request, 'delta3/register.html', {'form': RegisterForm})
-
-def thanks(request):
-	return render(request, 'delta3/thanks.html')
-
-def secure_app(request):
-	return render(request, 'delta3/secure_app.html')
