@@ -18,5 +18,6 @@ App name: delta3
 
 
 ##Testing
-
-1. Sql inject for Search page `" OR 1=1;--`
+Sql injections for search page:
+1. `" OR 1=1;--`
+2. `" UNION SELECT * from delta_user;--`

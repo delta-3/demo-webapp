@@ -35,12 +35,16 @@ def search(request):
 			# g = Gif.objects.raw('SELECT * from delta3_gif where gif_name=""; SELECT * from delta3_user')
 			if len(list(g)) > 0:
 				response = ""
-				html = ""
-				for x in g:	
-					response = response + str(x) + "<br>"
-					url = str(x.gif_url)
-					html = html + "<img src=" + url + "\><br>"
-				return HttpResponse(html)
+				# html = ""
+				# for x in g:	
+				# 	response = response + str(x) + "<br>"
+				# 	url = str(x.gif_url)
+				# 	html = html + '<img src="' + url + '"\><br>'
+			return render(request, 'delta3/search.html',{'gifs': g, 'query': sql,})
+				# return HttpResponse(html)
+	# cursor = connection.cursor()
+	# cursor.execute('select * from delta3_gif; show tables;')
+
 	return render(request, 'delta3/search.html', {'form': SearchForm})
 
 def about(request):

@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+	<nav class="navbar navbar-default navbar-fixed-op">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="Brand" src="http://sublime99.com/wp-content/uploads/2015/02/chuck-norris-03-sublime99.jpg" height="30px">
+	      </a>
+	      <p class="navbar-text">Delta Force</p>
+	    </div>
+ 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ul class="nav navbar-nav navbar-right">
+        		<li><a href="#">Comments</a></li>
+        		<li><a href="/delta3/login">Logout</a></li>
+      		</ul>
+    	</div>
+	  </div>
+	</nav>
+</head>
 <div class="row">
 	<div class="col-sm-4">
-		<img src="http://static.comicvine.com/uploads/original/11111/111112756/3141240-0483057803-Chuck.jpg" height="50%" align="middle">
+		<img src="http://static.comicvine.com/uploads/original/11111/111112756/3141240-0483057803-Chuck.jpg" height="50%" align="left">
 	</div>
 	<div class="col-sm-4">
 		<form class="form-horizontal padding-top=10px" action="/delta3/search" method="post">
@@ -30,7 +48,23 @@
 		</form>
 	</div>
 	<div class="col-sm-4">
-		<img src="http://4.bp.blogspot.com/_JzInBXovu8w/SfHCOysBbiI/AAAAAAAAAgo/WapyJWFBJz4/s400/chuck-norris.jpg" height="50%" align="middle">
+		<img src="http://4.bp.blogspot.com/_JzInBXovu8w/SfHCOysBbiI/AAAAAAAAAgo/WapyJWFBJz4/s400/chuck-norris.jpg" height="50%" align="right">
 	</div>
+<div class="row col-sm-offset-4">
+	<p >{{query}}</p>
+</div>
+<div class="row">
+	{% for gif in gifs %}
+		<div class="col-sm-offset-4">
+			<!-- <div class="text-center"> -->
+			<img src="{{gif.gif_url}}" alt="{{gif}}"/>
+			<p>{{gif}}</p>
+			<!-- </div> -->
+		</div>
+	{% endfor %}
+</div>
+
 </div> 
+
+
 {% endblock %}

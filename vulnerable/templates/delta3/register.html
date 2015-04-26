@@ -1,6 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+	<nav class="navbar navbar-default navbar-fixed-op">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="Brand" src="http://sublime99.com/wp-content/uploads/2015/02/chuck-norris-03-sublime99.jpg" height="30px">
+	      </a>
+	      <p class="navbar-text">Delta Force</p>
+	    </div>
+ 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ul class="nav navbar-nav navbar-right">
+        		<li><a href="/delta3/login">Login</a></li>
+      		</ul>
+    	</div>
+	  </div>
+	</nav>
+</head>
 	<form class="form-horizontal" action="/delta3/register" method="post">
 	<div class="form-group">
 	<div class="col-sm-4">
