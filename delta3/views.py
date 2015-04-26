@@ -3,12 +3,12 @@ from forms import *
 from django.forms.formsets import formset_factory
 from delta3.models import Gif, User
 from django.http import HttpResponse, HttpResponsePermanentRedirect
-from django.db import connection
+from django.db import connection, transaction
 import logging
 logger = logging.getLogger(__name__)
 
 def home(request):
-	return render(request, 'delta3/home.html')
+	return render(request, 'delta3/login.html')
 	
 def login(request):
 	# Check if username matches password
@@ -50,14 +50,31 @@ def register(request):
 	# Exceptions are manually being created for POC
 	# These exceptions will handled by the middlewares.py's "process_exception"
 	# Raise ValueError exception if a digit is in firstname or lastname
-	if request.REQUEST.get('username') and request.REQUEST.get('password') and request.REQUEST.get('firstname') and request.REQUEST.get('lastname') and request.REQUEST.get('grad_year'):
+	if request.REQUEST.get('password') and request.REQUEST.get('username'):
+		
 		firstname_in = request.REQUEST.get('firstname')
 		if any(char.isdigit() for char in firstname_in):
 			raise ValueError("Integer detected in firstname in /delta3/register")
+		
 		lastname_in = request.REQUEST.get('lastname')
 		if any(char.isdigit() for char in lastname_in):
 			raise ValueError("Integer detected in lastname in /delta3/register")
-		grad_year_in = int(request.REQUEST.get('grad_year'))
+		
+		age_in = int(request.REQUEST.get('age'))
 		un_in = request.REQUEST.get('username')
 		pwd_in = request.REQUEST.get('password')
+		
+		#save new user in database
+		sql = 'SELECT * from delta3_user where username=' + '"' + un_in + '"' 
+		logger.debug("sql = ..." + sql)        
+		users = User.objects.raw(sql)        
+		if len(list(users)) <= 0:
+			sql = 'INSERT INTO delta3_user (username, password) VALUES(' + '"' + un_in + '",' + '"' + pwd_in + '"' + ')' 
+			cursor = connection.cursor()
+			cursor.execute(sql)
+			#transaction.commit_unless_managed()
+			logger.debug("sql = ..." + sql)        
+			return render(request, 'delta3/login.html')
+		else:
+			logger.debug("username already exists")        
 	return render(request, 'delta3/register.html', {'form': RegisterForm})
