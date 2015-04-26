@@ -1,14 +1,26 @@
 from django.shortcuts import render
 from forms import *
 from django.forms.formsets import formset_factory
-from delta3.models import Gif
+from delta3.models import Gif, User
 from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.db import connection
+import logging
+logger = logging.getLogger(__name__)
 
 def home(request):
 	return render(request, 'delta3/home.html')
 	
 def login(request):
+	# Check if username matches password
+	if request.REQUEST.get('username') and request.REQUEST.get('password'):
+		un = request.REQUEST.get('username')
+		pwd = request.REQUEST.get('password')
+		sql = 'SELECT * from delta3_user where username=' + '"' + un + '"' + ' and password=' + '"' + pwd + '"' 
+		logger.debug("sql = ..." + sql)        
+		users = User.objects.raw(sql)        
+		if len(list(users)) > 0:
+			# login(request, user)
+			return render(request, 'delta3/search.html', {'form': SearchForm})
 	return render(request, 'delta3/login.html', {'form': LoginForm})
 
 def comments(request):
@@ -21,7 +33,7 @@ def search(request):
 			sql = 'SELECT * from delta3_gif where gif_name=' + '"' + searchterm + '"' 
 			g = Gif.objects.raw(sql)
 			# g = Gif.objects.raw('SELECT * from delta3_gif where gif_name=""; SELECT * from delta3_user')
-			if (g):
+			if len(list(g)) > 0:
 				response = ""
 				html = ""
 				for x in g:	
@@ -38,21 +50,14 @@ def register(request):
 	# Exceptions are manually being created for POC
 	# These exceptions will handled by the middlewares.py's "process_exception"
 	# Raise ValueError exception if a digit is in firstname or lastname
-	if (request.REQUEST.get('firstname')):
+	if request.REQUEST.get('username') and request.REQUEST.get('password') and request.REQUEST.get('firstname') and request.REQUEST.get('lastname') and request.REQUEST.get('grad_year'):
 		firstname_in = request.REQUEST.get('firstname')
 		if any(char.isdigit() for char in firstname_in):
 			raise ValueError("Integer detected in firstname in /delta3/register")
-
-	if (request.REQUEST.get('lastname')):
 		lastname_in = request.REQUEST.get('lastname')
 		if any(char.isdigit() for char in lastname_in):
 			raise ValueError("Integer detected in lastname in /delta3/register")
-
-	# Raise ValueError exception if a character is found in the grad_year
-	if(request.REQUEST.get('grad_year')):
-		x = int(request.REQUEST.get('grad_year'))
-		# try: 
-		# 	x = int(request.POST.get('grad_year'))
-		# except ValueError:
-		# 	return HttpResponse("ValueError exception thrown")
+		grad_year_in = int(request.REQUEST.get('grad_year'))
+		un_in = request.REQUEST.get('username')
+		pwd_in = request.REQUEST.get('password')
 	return render(request, 'delta3/register.html', {'form': RegisterForm})

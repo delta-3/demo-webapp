@@ -1,20 +1,64 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1 style="text-align:center">EC700 Delta 3 Login Page</h1>
-	<br>
-	<div class="container" style="text-align: center">
-		<form action="/delta3/login" method="post"> <!--{% csrf_token %}-->
-		Username:<br>
-		{{ form.username }}
-		<br>
-		<br>
-		Password:<br>
-		{{ form.password }}
-		<br>
-		<br>
-		<br>
-		<button class="btn btn-default" type="submit">Login!</button>
-		</form> 
+	<form class="form-horizontal" action="/delta3/login" method="post">
+	<div class="form-group">
+	<div class="col-sm-4">
+	<img src="http://img.photobucket.com/albums/v642/shakespeares_sister/shakes6/cnkick1.jpg" height="50%" align="middle">
 	</div>
+	<div class="col-sm-4">
+		<h1>Delta Force Login Page</h1>
+	</div>
+		<div class="col-sm-4">
+	</div>	
+	</div>
+  <div class="form-group">
+    <label for="username" class="col-sm-4 control-label">Username</label>
+    <div class="col-sm-4">
+      <input class="form-control" id="username" name="username" placeholder="username" value="{{ username }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="password" class="col-sm-4 control-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" name="password" id="password" placeholder="password" value="{{ password }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+  <div class="col-sm-4">
+  </div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-lg btn-danger btn-block">Sign in</button>
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+  </div>
+</form>
+    
+<form class="form-horizontal" action="/delta3/register">
+    <div class="form-group">
+  <div class="col-sm-4">
+  </div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-lg btn-danger btn-block">Register</button>
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+  	<!-- <img src="http://img.photobucket.com/albums/v642/shakespeares_sister/shakes6/cnkick1.jpg" height="50%" align="middle"> -->
+  </div>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</form>
 {% endblock %}

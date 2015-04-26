@@ -1,24 +1,69 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1 style="text-align:center">EC700 Delta 3 Register Page</h1>
-	<br>
-	<div class="container" style="text-align: center">
-		<form action="/delta3/register" method="post"> <!--{% csrf_token %}-->
-		First name:<br>
-		{{ form.firstname }}
-		<br>
-		<br>
-		Last name:<br>
-		{{ form.lastname }}
-		<br>
-		<br>
-		Grad Year:<br>
-		{{ form.grad_year }}
-		<br>
-		<br>
-		<br>
-		<button class="btn btn-default" type="submit">Submit!</button>
-		</form> 
+	<form class="form-horizontal" action="/delta3/register" method="post">
+	<div class="form-group">
+	<div class="col-sm-4">
 	</div>
+	<div class="col-sm-4">
+		<h1>Delta Force Registration</h1>
+	</div>
+		<div class="col-sm-4">
+	</div>	
+	</div>
+  <div class="form-group">
+    <label for="firstname" class="col-sm-4 control-label">Name</label>
+    <div class="col-sm-2">
+      <input class="form-control" id="firstname" name="firstname" placeholder="firstname" value="{{ firstname }}">
+    </div>
+    <div class="col-sm-2">
+      <input class="form-control" id="lastname" name="lastname" placeholder="lastname" value="{{ lastname }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="age" class="col-sm-4 control-label">Age</label>
+    <div class="col-sm-4">
+      <input class="form-control" name="age" id="age" placeholder="Age" value="{{ age }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="username" class="col-sm-4 control-label">Username</label>
+    <div class="col-sm-4">
+      <input class="form-control" name="username" id="username" placeholder="username" value="{{ username }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+    <label for="password" class="col-sm-4 control-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password" class="form-control" name="password" id="password" placeholder="password" value="{{ password }}">
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+  <div class="col-sm-4">
+  </div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-lg btn-danger btn-block">Register</button>
+    </div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+  <div class="form-group">
+		<div class="col-sm-4">
+  		</div>
+    	<div class="col-sm-4">
+      	<img src="http://i0.kym-cdn.com/photos/images/original/000/166/876/chuck-norris-thumbs-up.jpg">
+    	</div>
+    	<div class="col-sm-4">
+	</div>
+  </div>
+</form>
+
 {% endblock %}
