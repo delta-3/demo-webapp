@@ -11,19 +11,26 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='LoginInfo',
+            name='Comment',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('content', models.CharField(max_length=200)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Gif',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('gif_name', models.CharField(max_length=20)),
+                ('gif_url', models.URLField()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='User',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('username', models.CharField(max_length=35)),
                 ('password', models.CharField(max_length=200)),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Search',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('gif_name', models.CharField(max_length=20)),
-                ('url_gif', models.URLField()),
             ],
         ),
     ]

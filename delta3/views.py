@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from forms import *
 from django.forms.formsets import formset_factory
-from delta3.models import Gif
+from delta3.models import User, Gif, Comment
 from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.db import connection
 
@@ -12,7 +12,26 @@ def login(request):
 	return render(request, 'delta3/login.html', {'form': LoginForm})
 
 def comments(request):
-	return render(request, 'delta3/comments.html', {'form': CommentsForm})
+	request_method = request.method
+	
+	# If GET request, render comments form and clear out comment_display variable
+	if (request_method == 'GET'):
+		context = {'form': CommentsForm, 'thanks_statement': "", 'all_comments_statement': ""}
+		return render(request, 'delta3/comments.html', context)
+	
+	# If POST request, 
+	elif (request_method == 'POST'):
+		# TODO Get username from database and add to Comment Model
+		comment = request.POST.get('comment_submit')
+		# Create Comment model and save to database
+		#c = Comment(user=username, content=comment)
+		c = Comment(content=comment)
+		c.save()
+		all_comments = Comment.objects.all().order_by('-id') # Most recent first
+		thanks_statement = "Thanks for your comment: "
+		all_comments_statement = "All comments: "
+		context = {'form': CommentsForm, 'comment_display': comment, 'all_comments': all_comments, 'thanks_statement': thanks_statement, 'all_comments_statement': all_comments_statement}
+		return render(request, 'delta3/comments.html', context)
 
 def search(request):
 	if request.method == 'POST':

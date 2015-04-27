@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'delta3',
+    #'secure_app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,8 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    #'django.middleware.security.SecurityMiddleware',
     'vulnerable.request_logger.RequestLoggerMiddleware',
+    #'secure_app.middlewares.Repair',
 )
 
 ROOT_URLCONF = 'vulnerable.urls'
