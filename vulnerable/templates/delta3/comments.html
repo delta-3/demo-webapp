@@ -19,31 +19,33 @@
 	  </div>
 	</nav>
 </head>
+
 <div class="row">
+	<!-- Left Image -->
 	<div class="col-sm-4">
-		<img src="http://static.comicvine.com/uploads/original/11111/111112756/3141240-0483057803-Chuck.jpg" height="50%" align="left">
+		<div class="col-sm-2"></div>
+		<img src={{ img_left }} height="40%">
 	</div>
+	<!-- Comment Box, Comment List -->
 	<div class="col-sm-4">
 		<form class="form-horizontal padding-top=10px text-center" action="/delta3/comments" method="post">
 			<div class="form-group text-center">
-				<div class="col-sm-8 text-center">
-				</div>
-			</div>
-			<div class="form-group">
-				<!-- <label for="username" class="col-sm-2 control-label">Search for</label> -->
-				<!-- <div class="col-sm-10"> -->
 				<div class="col-sm-10 text-center">
 					<h1>Comments Page</h1>
-					<!--<input class="form-control" id="searchterm" name="searchterm" placeholder="searchterm" value="{{ searchterm }}">-->
+				</div>
+			</div>
+			<div class="form-group text-center">
+				<div class="col-sm-4 text-center">
+				</div>
+				<div id="comment_box" class="col-sm-10 text-center">
 					{{ form.comment_submit }}
 				</div>
 				<div class="col-sm-4"></div>
-				<!-- </div> -->
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2"></div>
 				<div class="col-sm-6">
-					<button type="submit" class="btn btn-lg btn-danger btn-block">Submit Comment!</button>
+					<button id="submit_btn" type="submit" class="btn btn-lg btn-danger btn-block">Post Comment!</button>
 				</div>
 			</div>
 		</form>
@@ -51,21 +53,22 @@
 			POST REQUESTS ONLY 
 			If the user submits a comment, display it on the same page
 			Also display all comments in table delta3_comments
+			Enable XSS by disabling autoescape
 		{% endcomment %}
-		<p>{{ thanks_statement }}{{ comment_display }}</p>
+		<p>{{ thanks_statement }}{{ comment_display | safe }}</p>
 		<p >{{ all_comments_statement }}</p>
 		{% for comment in all_comments %}
 		<div>
-			<li>{{ comment.content }}</li>
+			<li>{{ comment.content | safe }}</li>
 		</div>
 		{% endfor %}
 	</div>
+	<!-- Right Image -->
 	<div class="col-sm-4">
-		<img src="http://4.bp.blogspot.com/_JzInBXovu8w/SfHCOysBbiI/AAAAAAAAAgo/WapyJWFBJz4/s400/chuck-norris.jpg" height="50%" align="right">
+		<div class="col-sm-4"></div>
+		<img src={{ img_right }} height="40%">
 	</div>
-<div class="row col-sm-offset-4">
-	<p ></p>
 </div>
-<div class="row">
-</div>
+<script>
+</script>
 {% endblock %}
