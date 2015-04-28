@@ -20,3 +20,5 @@ App name: delta3
 ##Testing
 
 1. Sql inject for Search page `" OR 1=1;--`
+2. XSS vulnerability in Comments page (ex. `<sCript>...</sCript>`)
+
