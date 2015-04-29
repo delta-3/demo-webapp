@@ -101,7 +101,7 @@ def register(request):
 		logger.debug("sql = ..." + sql)        
 		users = User.objects.raw(sql)        
 		if len(list(users)) <= 0:
-			sql = 'INSERT INTO delta3_user (username, password) VALUES(' + '"' + un_in + '",' + '"' + pwd_in + '"' + ')' 
+			sql = 'INSERT INTO delta3_user (username, password, firstname, lastname, age) VALUES(' + '"' + un_in + '",' + '"' + pwd_in + '",' + '"' + firstname_in + '",' + '"' + lastname_in + '",' + '"' + str(age_in) + '"' + ')' 
 			cursor = connection.cursor()
 			cursor.execute(sql)
 			#transaction.commit_unless_managed()
