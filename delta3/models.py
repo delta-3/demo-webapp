@@ -13,3 +13,11 @@ class Gif(models.Model):
 
 	def __unicode__(self):
 		return "gif_name :" + str(self.gif_name) + ", gif_url : " + str(self.gif_url)
+		
+class Comment(models.Model):
+	#user = models.ForeignKey(User)
+	content = models.CharField(max_length=200)
+
+	def __unicode__(self):
+		#return "user :" + str(self.user) + ", content : " + str(self.content)
+		return "content : " + str(self.content)
