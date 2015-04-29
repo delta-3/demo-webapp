@@ -18,9 +18,9 @@ App name: delta3
 
 
 ##Testing
-Sql injections for search page:
+#####Sql injections for search page:
 1. `" OR 1=1;--`
 2. `" UNION SELECT * from delta_user;--`
 
-XSS for comments page:
+#####XSS for comments page:
 1. a variation of script tag, except for all lowercase (e.g., `<scRipt>...</scRipt>`)
