@@ -1,16 +1,74 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<h1 style="text-align:center">EC700 Delta 3 Comments Page</h1>
-	<br>
-	<div class="container" style="text-align: center">
-		<form class="form-horizontal" role="form" method="post" action="/delta3/comments"> <!--{% csrf_token %}-->
-			<div class="form-group">
-				{{ form.comments }}
-				<br>
-				<br>
-				<button class="btn btn-default" type="submit">Submit Comment!</button>
-			<div>
-		</form> 
+<head>
+	<nav class="navbar navbar-default navbar-fixed-op">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="Brand" src="http://sublime99.com/wp-content/uploads/2015/02/chuck-norris-03-sublime99.jpg" height="30px">
+	      </a>
+	      <p class="navbar-text">Delta Force</p>
+	    </div>
+ 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      		<ul class="nav navbar-nav navbar-right">
+        		<li><a href="#">Search</a></li>
+        		<li><a href="/delta3/login">Logout</a></li>
+      		</ul>
+    	</div>
+	  </div>
+	</nav>
+</head>
+
+<div class="row">
+	<!-- Left Image -->
+	<div class="col-sm-4">
+		<div class="col-sm-2"></div>
+		<img src={{ img_left }} height="40%">
 	</div>
+	<!-- Comment Box, Comment List -->
+	<div class="col-sm-4">
+		<form class="form-horizontal padding-top=10px text-center" action="/delta3/comments" method="post">
+			<div class="form-group text-center">
+				<div class="col-sm-10 text-center">
+					<h1>Comments Page</h1>
+				</div>
+			</div>
+			<div class="form-group text-center">
+				<div class="col-sm-4 text-center">
+				</div>
+				<div id="comment_box" class="col-sm-10 text-center">
+					{{ form.comment_submit }}
+				</div>
+				<div class="col-sm-4"></div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-6">
+					<button id="submit_btn" type="submit" class="btn btn-lg btn-danger btn-block">Post Comment!</button>
+				</div>
+			</div>
+		</form>
+		{% comment %} 
+			POST REQUESTS ONLY 
+			If the user submits a comment, display it on the same page
+			Also display all comments in table delta3_comments
+			Enable XSS by disabling autoescape
+		{% endcomment %}
+		<p>{{ thanks_statement }}{{ comment_display | safe }}</p>
+		<p >{{ all_comments_statement }}</p>
+		{% for comment in all_comments %}
+		<div>
+			<li>{{ comment.content | safe }}</li>
+		</div>
+		{% endfor %}
+	</div>
+	<!-- Right Image -->
+	<div class="col-sm-4">
+		<div class="col-sm-4"></div>
+		<img src={{ img_right }} height="40%">
+	</div>
+</div>
+<script>
+</script>
 {% endblock %}
