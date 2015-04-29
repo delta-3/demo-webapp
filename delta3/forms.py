@@ -13,7 +13,7 @@ class LoginForm(forms.Form):
 	password = forms.CharField(widget=forms.PasswordInput()) # Set min_length later...
 
 class CommentsForm(forms.Form):
-	comments = forms.CharField(widget=forms.Textarea)
+	comment_submit = forms.CharField(widget=forms.Textarea)
 
 class SearchForm(forms.Form):
 	searchterm = forms.CharField(max_length=35)
