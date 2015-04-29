@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from forms import *
 from django.forms.formsets import formset_factory
-from delta3.models import Gif, User
+from delta3.models import Gif, User, Comment
 from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.db import connection, transaction
 import logging
 logger = logging.getLogger(__name__)
+from django.template import Context
 
 def home(request):
 	return render(request, 'delta3/login.html')
@@ -24,7 +25,34 @@ def login(request):
 	return render(request, 'delta3/login.html', {'form': LoginForm})
 
 def comments(request):
-	return render(request, 'delta3/comments.html', {'form': CommentsForm})
+	request_method = request.method
+	
+	# If GET request, render comments form and clear out comment_display variable
+	if (request_method == 'GET'):
+		img_left = "http://static.comicvine.com/uploads/original/11111/111112756/3141240-0483057803-Chuck.jpg"
+		img_right = "http://4.bp.blogspot.com/_JzInBXovu8w/SfHCOysBbiI/AAAAAAAAAgo/WapyJWFBJz4/s400/chuck-norris.jpg"
+		context = {'form': CommentsForm, 'thanks_statement': "", 'all_comments_statement': "", 'img_left': img_left, 'img_right': img_right}
+		return render(request, 'delta3/comments.html', context)
+	
+	# If POST request, 
+	elif (request_method == 'POST'):
+		# TODO Get username from database and add to Comment Model
+		comment = request.POST.get('comment_submit')
+		if "script" in comment:
+			raise ValueError("XSS detected\n" )
+		# Create Comment model and save to database
+		#c = Comment(user=username, content=comment)
+		c = Comment(content=comment)
+		c.save()
+		all_comments = Comment.objects.all().order_by('-id') # Most recent first
+		thanks_statement = "Thanks for your comment: "
+		all_comments_statement = "All comments: "
+		img_left = "http://www.clipartbest.com/cliparts/nTX/EB7/nTXEB7jTB.jpeg"
+		img_right = "http://media.giphy.com/media/1HrVMip45ciJy/giphy.gif"
+		context = {'form': CommentsForm, 'comment_display': comment, 'all_comments': all_comments, 'thanks_statement': thanks_statement, 'all_comments_statement': all_comments_statement, 'img_left': img_left, 'img_right': img_right}
+		return render(request, 'delta3/comments.html', context)
+		#context = Context({'form': CommentsForm, 'comment_display': comment, 'all_comments': all_comments, 'thanks_statement': thanks_statement, 'all_comments_statement': all_comments_statement, 'img_left': img_left, 'img_right': img_right}, autoescape=False)
+		#return render(request, 'delta3/comments.html', context)
 
 def search(request):
 	if request.method == 'POST':
