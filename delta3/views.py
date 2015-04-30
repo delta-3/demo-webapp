@@ -6,6 +6,9 @@ from django.http import HttpResponse, HttpResponsePermanentRedirect
 from django.db import connection, transaction
 import logging
 logger = logging.getLogger(__name__)
+
+import re
+
 from django.template import Context
 
 def home(request):
@@ -25,6 +28,12 @@ def login(request):
 	return render(request, 'delta3/login.html', {'form': LoginForm})
 
 def comments(request):
+       
+        def parsecomment(comment):
+            if re.match("<script>", comment, re.IGNORECASE) or re.match("<.*on(error|load|click|hover).*>", comment, re.IGNORECASE):
+                raise ValueError("XSS detected\n")
+            return comment
+
 	request_method = request.method
 	
 	# If GET request, render comments form and clear out comment_display variable
@@ -38,8 +47,7 @@ def comments(request):
 	elif (request_method == 'POST'):
 		# TODO Get username from database and add to Comment Model
 		comment = request.POST.get('comment_submit')
-		if "script" in comment:
-			raise ValueError("XSS detected\n" )
+                comment = parsecomment(comment)
 		# Create Comment model and save to database
 		#c = Comment(user=username, content=comment)
 		c = Comment(content=comment)
@@ -56,9 +64,9 @@ def comments(request):
 
 def search(request):
 	if request.method == 'POST':
-		if(request.REQUEST.get('searchterm')):
-			searchterm = str(request.REQUEST.get('searchterm'))
-			sql = 'SELECT * from delta3_gif where gif_name=' + '"' + searchterm + '"' 
+		if(request.POST.get('searchterm')):
+			searchterm = str(request.POST.get('searchterm'))
+                        sql = 'SELECT * from delta3_gif where gif_name="%s"' % searchterm
 			g = Gif.objects.raw(sql)
 			# g = Gif.objects.raw('SELECT * from delta3_gif where gif_name=""; SELECT * from delta3_user')
 			if len(list(g)) > 0:
