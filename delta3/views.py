@@ -79,6 +79,10 @@ def about(request):
 	return render(request, 'delta3/about.html')
 
 def register(request):
+
+	def parseage(age):
+		return int(age)
+             
 	# Exceptions are manually being created for POC
 	# These exceptions will handled by the middlewares.py's "process_exception"
 	# Raise ValueError exception if a digit is in firstname or lastname
@@ -92,7 +96,8 @@ def register(request):
 		if any(char.isdigit() for char in lastname_in):
 			raise ValueError("Integer detected in lastname in /delta3/register")
 		
-		age_in = int(request.REQUEST.get('age'))
+		age = request.REQUEST.get('age')
+		age_in = parseage(age)
 		un_in = request.REQUEST.get('username')
 		pwd_in = request.REQUEST.get('password')
 		
