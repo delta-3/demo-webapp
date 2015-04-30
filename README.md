@@ -44,19 +44,18 @@ Do no use numbers in first, last,
 6. Show filter with should allow only 2 digits (possibly)
 7. Go back to malicious user, enter 2 characters for age
 8. Crash, show request table, show filter, explain filter changed to be more generic
-9. Go back to maliciou enter 2 characters for age
+9. Go back to malicious enter 2 characters for age, show bad input was blocked
 
 
 ###Search (Sql injection)
 
 1. Clear database
-2. Enter at least 1 good input, so it can query clone server
 2. Execute the sql injection showing it works
 6. `" UNION ALL SELECT age, username, password FROM delta3_user;--`
 1. Now say "But with our system"
 2. Clear database
 1. With FF (good guy) search for at least 3 things
-2. With Chrome enter `
+2. With Chrome (bad guy) enter `
  `" UNION ALL SELECT * FROM delta3_user;--`
 3. Show request database, it is tagged as bad
 4. Show filter that it generated
